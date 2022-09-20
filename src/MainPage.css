@@ -1,0 +1,36 @@
+.Main-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.Sub-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+
+}
+
+.ReviewItem {
+    display: flex;
+    gap:30px;
+    align-items: center;
+    align-content: center;
+}
+
+.ReviewItemInternal {
+    height: 10px;
+    width: 200px;
+}
+
+.New-Review {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    gap:10px
+}
