@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import NewReview from './NewReview';
-import { useEffect,useState,useNavigate,useRef} from 'react';
+import { useEffect,useState,useRef} from 'react';
+import { useNavigate } from "react-router-dom"
 import axios from 'axios';
 import './MainPage.css'
 import ReviewItem from './ReviewItem';
@@ -12,8 +13,9 @@ function MainPage() {
 
 const [allreviews,setAllReviews] = useState([])
 const [refresh,setRefresh] = useState(1)
-const [socketChange,setSocketChange] = useState(null)
+const [holdText,setHoldText] = useState()
 const socket = useRef()
+const navigate = useNavigate()
 
 
 useEffect(()=>{
@@ -48,11 +50,10 @@ useEffect(()=>{
 
   return (
     <div className="Main-page">
-      <a href="http://localhost:3000/new"> new post </a>
-
+      <button onClick={()=>navigate('/new')}>new Review</button>
       <div className='Sub-page'>
         {
-          allreviews.map((e,index)=> <ReviewItem key = {e.reviewId} content = {{...e,indexNumber:index+1}}></ReviewItem>)
+          allreviews.map((e,index)=> <ReviewItem key = {e.reviewId} content = {{...e,index:index+1,setHoldText,holdText}}></ReviewItem>)
         }
       </div>
     </div>
@@ -60,20 +61,3 @@ useEffect(()=>{
 }
 
 export default MainPage;
-
-
-
-// <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>

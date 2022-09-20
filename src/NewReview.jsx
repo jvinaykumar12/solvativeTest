@@ -5,8 +5,8 @@ import './MainPage.css'
 
 
 function NewReview() {
-    const [title,setTitle] = useState()
-    const [content,setContent] = useState()
+    const [title,setTitle] = useState("")
+    const [content,setContent] = useState("")
     const navigate = useNavigate()
 
     const submitReview = ()=>{
