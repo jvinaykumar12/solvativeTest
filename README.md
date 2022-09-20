@@ -14,5 +14,5 @@
   This should be a live list view with implementation of web-socket, so whenever any review is added/edited/deleted, it should immediately update the table without user   needing to refresh the page .
 
 #Tasks Completed -  
-  All the Given Tasks are completed except the edit option ans css styling
+  All the Given Tasks are completed except the edit option and css styling
   
