@@ -1,13 +1,16 @@
 import './MainPage.css'
 import axios from 'axios';
+import { useNavigate } from "react-router-dom"
+
 
 function ReviewItem(props) {
     
-    const {index,title,content,createdAt,reviewId} = props.content
-    const dateString = new Date(createdAt).toDateString()
+    const {index,title,content,updatedAt,reviewId} = props.content
+    const dateString = new Date(updatedAt).toLocaleString()
+    const navigate = useNavigate()
 
     const editPost = ()=>{
-        
+        navigate(`/${reviewId}`)
     }
 
     const deletePost = ()=>{
@@ -22,7 +25,7 @@ function ReviewItem(props) {
         <div className="ReviewItem">
             <div className='ReviewItemInternal'>{index}</div>
             <div className='ReviewItemInternal'>{title}</div>
-            <div className='ReviewItemInternal'>{content}</div>
+            <div className='ReviewContent'>{content}</div>
             <div className='ReviewItemInternal'>{dateString}</div>
             <button onClick={editPost}>edit</button>
             <button onClick={deletePost}>delete</button>

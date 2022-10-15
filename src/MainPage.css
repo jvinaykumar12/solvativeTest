@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     align-content: center;
+    gap:10px;
     height: 100vh;
     width: 100vw;
 }
@@ -12,19 +13,26 @@
     flex-direction: column;
     align-items: center;
     align-content: center;
+    gap:30px
 
 }
 
 .ReviewItem {
     display: flex;
-    gap:30px;
-    align-items: center;
-    align-content: center;
+    gap:20px;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 .ReviewItemInternal {
-    height: 10px;
-    width: 200px;
+    height: 100px;
+    width: 180px;
+}
+
+.ReviewContent {
+    overflow:scroll;
+    height: 100px;
+    width: 300px;
 }
 
 .New-Review {
