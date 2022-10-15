@@ -19,8 +19,6 @@ function NewReview(props) {
             navigate('/')
         })
     }
-
-    console.log(myVar)
     
     const editReview = ()=>{
         axios.post('http://localhost:3001/update',{
